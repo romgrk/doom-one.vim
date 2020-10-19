@@ -233,10 +233,11 @@ let s:text_colors = {
 \ 'Debug':   s:yellow,
 \ 'Error':   s:red,
 \ 'Special': s:magenta,
+\ 'Muted':   s:fg_alt,
 \}
 for key in keys(s:text_colors)
-  call s:_('Text' . key, s:text_colors[key], '', '')
-  call s:_('Bold' . key, s:text_colors[key], '', 'bold')
+  call s:_('Text' . key,          s:text_colors[key], '', '')
+  call s:_('Text' . key . 'Bold', s:text_colors[key], '', 'bold')
 endfor
 
 " }}}
