@@ -224,6 +224,7 @@ hi! link WarningMsg TextWarning
 hi! link ErrorMsg   TextError
 hi! link Error      TextError
 hi! link ModeMsg    TextSpecial
+hi! link Todo       TextWarningBold
 
 
 " }}}
