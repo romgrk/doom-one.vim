@@ -204,11 +204,11 @@ call s:_('Search',          s:highlight_color, s:highlight,      'none')
 call s:_('IncSearch',       s:highlight_color, s:highlight,      'none')
 call s:_('IncSearchCursor', '',                '',               'reverse')
 
-call s:_('Conceal',         s:fg_conceal, 'none',    '')
-call s:_('SpecialKey',      '#333333',        'none',    '')
-call s:_('NonText',         s:fg_alt,  '',        'bold')
-call s:_('MatchParen',      s:red,            'none', 'bold')
-call s:_('Whitespace',      s:fg_subtle,      '',        '')
+call s:_('Conceal',         s:fg_conceal, 'none', '')
+call s:_('SpecialKey',      s:violet,     'none', 'bold')
+call s:_('NonText',         s:fg_alt,     '',     'bold')
+call s:_('MatchParen',      s:red,        'none', 'bold')
+call s:_('Whitespace',      s:fg_subtle,  '',     '')
 
 
 call s:_('Highlight',       '', color#Darken(s:highlight, 0.5), 'none')
