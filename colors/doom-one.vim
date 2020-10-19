@@ -78,34 +78,10 @@ let s:fg_conceal = s:base4
 let s:fg_subtle  = s:base7
 
 
-
 let s:highlight       = s:blue
 let s:highlight_color = s:base0
 
 let s:tag    = '#678CFA'
-
-" PREVIOUS {{{
-
-" let s:black0    = '#000000'
-" let s:black1    = '#24292e'
-" let s:black2    = '#4c4c4c'
-" let s:white     = '#f4fbfe'
-
-" let s:darkyellow      = '#c59000'
-" let s:yellow          = '#eab700'
-" let s:brightyellow    = '#ffe914'
-
-" let s:gh_link = '#0366d6'
-
-" let s:gh_grey   = '#8f9aa9'
-" let s:gh_red    = '#DB524E'
-" let s:gh_orange = '#e98642'
-" let s:gh_blue0  = '#0d33a5'
-" let s:gh_blue1  = '#2076d8'
-" let s:gh_purple = '#6f42c1'
-
-" let s:gh_search      = '#FFEEB9'
-" let s:gh_search_dark = '#EDB34D'
 
 let s:diff_info_fg  = s:blue
 let s:diff_info_bg0 = color#Mix('#D8EEFD', s:bg, 0.6)
@@ -122,8 +98,6 @@ let s:gh_danger_fg0 = color#Mix(s:red,     s:fg, 0.6)
 let s:gh_danger_bg0 = color#Mix('#ffdce0', s:bg, 0.6)
 let s:gh_danger_bg1 = color#Mix('#ffdce0', s:bg, 0.8)
 let s:gh_danger_bg2 = color#Mix('#ffdce0', s:bg, 0.9)
-
-" }}}
 
 " }}}
 " General UI                                                                 {{{
@@ -233,12 +207,14 @@ let s:text_colors = {
 \ 'Debug':   s:yellow,
 \ 'Error':   s:red,
 \ 'Special': s:magenta,
-\ 'Muted':   s:fg_alt,
+\ 'Muted':   s:base7,
 \}
 for key in keys(s:text_colors)
   call s:_('Text' . key,          s:text_colors[key], '', '')
   call s:_('Text' . key . 'Bold', s:text_colors[key], '', 'bold')
 endfor
+
+" NOTE/DONE/TODO/FIXME/XXX/DEPRECATED comment highlights
 
 " }}}
 
