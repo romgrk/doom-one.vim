@@ -236,6 +236,7 @@ call s:_('URL',                  s:tag, '',        'underline')
 call s:_('Comment',              s:base6, '',        '')
 call s:_('CommentBold',          s:base6, '',        'bold')
 call s:_('SpecialComment',       s:base7, '',        'bold')
+hi! link CommentURL     URL
 hi! link CommentLabel   CommentBold
 hi! link CommentSection CommentBold
 hi! link Noise Comment
