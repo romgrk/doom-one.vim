@@ -32,6 +32,7 @@ function! s:_ (name, ...)
   if !empty(attr)
     let cmd .= ' gui=' . attr
   end
+  execute 'hi clear ' a:name
   execute cmd
 endfunc
 
@@ -71,17 +72,18 @@ let s:bg_statusline = s:bg_popup
 let s:bg_visual     = color#Lighten(s:base4, 0.3)
 let s:bg_selection  = s:dark_blue
 
-let s:fg         = '#bbc2cf'
-let s:fg_alt     = '#5B6268'
-let s:fg_widget  = s:fg
-let s:fg_conceal = s:base4
-let s:fg_subtle  = s:base7
+let s:fg           = '#bbc2cf'
+let s:fg_alt       = '#5B6268'
+let s:fg_widget    = s:fg
+let s:fg_conceal   = s:base4
+let s:fg_subtle    = s:base7
+let s:fg_highlight = color#Lighten(s:fg, 0.2)
 
 
 let s:highlight       = s:blue
 let s:highlight_color = s:base0
 
-let s:tag    = '#678CFA'
+let s:tag    = color#Mix(s:blue, s:cyan)
 
 let s:diff_info_fg  = s:blue
 let s:diff_info_bg0 = color#Mix('#D8EEFD', s:bg, 0.6)
@@ -102,10 +104,11 @@ let s:gh_danger_bg2 = color#Mix('#ffdce0', s:bg, 0.9)
 " }}}
 " General UI                                                                 {{{
 
-call s:_('Normal',           s:fg,  s:bg)
-call s:_('EndOfBuffer',      s:fg,  s:bg)
-call s:_('NormalPopup',      s:fg,  s:bg_popup)
-call s:_('NormalPopover',    s:fg,  s:bg_popup)
+call s:_('Normal',            s:fg,           s:bg)
+call s:_('EndOfBuffer',       s:fg,           s:bg)
+call s:_('NormalPopup',       s:fg_highlight, s:bg_popup)
+call s:_('NormalPopover',     s:fg_highlight, s:bg_popup)
+call s:_('NormalPopupPrompt', s:base7,        s:bg_highlight, 'bold')
 
 call s:_('Cursor',           '', s:base0,  'reverse')
 call s:_('SecondaryCursor',  '', s:highlight, 'none')
@@ -174,9 +177,12 @@ call s:_('BufferPart',        s:diff_info_fg,     s:diff_info_bg0, 'bold')
 " }}}
 " Search, Highlight, Conceal, Messages                                       {{{
 
-call s:_('Search',          s:highlight_color, s:highlight,      'none')
-call s:_('IncSearch',       s:highlight_color, s:highlight,      'none')
-call s:_('IncSearchCursor', '',                '',               'reverse')
+" let s:bg_search = color#Mix(s:bg, s:yellow, 0.2)
+let s:bg_search = s:yellow
+
+call s:_('Search',          s:highlight_color, s:bg_search,      'none')
+call s:_('IncSearch',       s:highlight_color, s:bg_search,      'none')
+call s:_('IncSearchCursor', '', '',               'reverse')
 
 call s:_('Conceal',         s:fg_conceal, 'none', '')
 call s:_('SpecialKey',      s:violet,     'none', 'bold')
@@ -233,6 +239,7 @@ hi! link Todo       TextWarningBold
 call s:_('Tag',                  s:tag, '',        'underline')
 call s:_('Link',                 s:tag, '',        'underline')
 call s:_('URL',                  s:tag, '',        'underline')
+hi! link Underlined     URL
 
 call s:_('Comment',              s:base6, '',        '')
 call s:_('CommentBold',          s:base6, '',        'bold')
@@ -256,7 +263,7 @@ call s:_('Label',                s:blue, '',        '')
 
 call s:_('Operator',             s:blue, '',        '')
 
-call s:_('Constant',             s:violet, '',        'none')
+call s:_('Constant',             s:violet, '',        'bold')
 
 call s:_('Number',               s:orange, '',        'none')
 call s:_('Float',                s:orange, '',        'none')
@@ -273,7 +280,7 @@ call s:_('StringDelimiter',      s:green, '',        'none')
 call s:_('Character',            s:green, '',        'bold')
 
 
-call s:_('Special',              s:violet, '',        'none')
+call s:_('Special',              s:violet, '',        'bold')
 call s:_('SpecialBold',          s:violet, '',        'bold')
 
 
