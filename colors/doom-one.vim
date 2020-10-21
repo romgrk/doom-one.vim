@@ -1,6 +1,6 @@
 " !::exe [So]
 
-if &bg != 'dark'
+if &background != 'dark'
   set background=dark
 end
 
@@ -48,6 +48,7 @@ let s:base5      = '#5B6268'
 let s:base6      = '#73797e'
 let s:base7      = '#9ca0a4'
 let s:base8      = '#b1b1b1'
+let s:base9      = '#E6E6E6'
 
 let s:grey       = s:base4
 let s:red        = '#ff6c6b'
@@ -163,16 +164,32 @@ call s:_('TabLine',             s:base7, s:bg_alt,  'bold')
 call s:_('TabLineSel',          s:blue,  s:bg_current, 'bold')
 call s:_('TabLineFill',         'none',  s:bg_other,   'bold')
 
-call s:_('BufferCurrent',     s:blue,           s:bg_current,  'bold')
-call s:_('BufferVisible',     s:base8,          s:bg_visible,  'bold')
-call s:_('Buffer',            s:base6,          s:bg_other,    'bold')
+call s:_('BufferCurrent',     s:base9,          s:bg_current,  'bold')
 call s:_('BufferCurrentMod',  s:yellow,         s:bg_current,  'bold')
-call s:_('BufferVisibleMod',  s:yellow,         s:bg_visible,  'bold')
-call s:_('BufferMod',         s:yellow,         s:bg_other,    'bold')
-call s:_('BufferSignCurrent', s:fg_widget, s:bg_current,  'none')
-call s:_('BufferSignVisible', s:fg_widget, s:bg_visible,  'none')
-call s:_('BufferSign',        s:fg_widget, s:bg_other,    'none')
-call s:_('BufferPart',        s:diff_info_fg,     s:diff_info_bg0, 'bold')
+call s:_('BufferCurrentSign', s:blue,           s:bg_current,  'none')
+
+call s:_('BufferVisible',     s:base9,          s:bg_visible,  'none')
+call s:_('BufferVisibleMod',  s:yellow,         s:bg_visible,  'none')
+call s:_('BufferVisibleSign', s:base8,          s:bg_visible,  'none')
+
+call s:_('BufferInactive',     s:base6,          s:bg_other,    'none')
+call s:_('BufferInactiveMod',  s:yellow,         s:bg_other,    'none')
+call s:_('BufferInactiveSign', s:base4,          s:bg_other,      'none')
+
+call s:_('BufferPart',        s:diff_info_fg,   s:diff_info_bg0, 'bold')
+
+let g:icons = extend(get(g:, 'icons', {}), {
+\  'bufferline_separator_active':   '▎',
+\  'bufferline_separator_inactive': '▎',
+\  'gitgutter_sign_added':            "\u00a0│",
+\  'gitgutter_sign_removed':          "\u00a0│",
+\  'gitgutter_sign_modified':         "\u00a0│",
+\  'gitgutter_sign_modified_removed': "\u00a0│",
+\})
+let gitgutter_sign_added            = g:icons.gitgutter_sign_added
+let gitgutter_sign_removed          = g:icons.gitgutter_sign_removed
+let gitgutter_sign_modified         = g:icons.gitgutter_sign_modified
+let gitgutter_sign_modified_removed = g:icons.gitgutter_sign_modified_removed
 
 " }}}
 " Search, Highlight, Conceal, Messages                                       {{{
@@ -284,9 +301,9 @@ call s:_('Special',              s:violet, '',        'bold')
 call s:_('SpecialBold',          s:violet, '',        'bold')
 
 
-call s:_('Identifier',           color#Lighten(s:magenta, 0.4), '',        'none')
-call s:_('Argument',             color#Lighten(s:magenta, 0.4), '',        'none')
-call s:_('Variable',             color#Lighten(s:magenta, 0.4), '',        'none')
+call s:_('Identifier',           color#Lighten(s:magenta, 0.2), '',        'none')
+call s:_('Argument',             color#Lighten(s:magenta, 0.2), '',        'none')
+call s:_('Variable',             color#Lighten(s:magenta, 0.2), '',        'none')
 
 call s:_('Function',             s:yellow, '',        'none')
 call s:_('Method',               s:yellow, '',        'bold')
