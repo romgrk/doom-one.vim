@@ -356,6 +356,19 @@ call s:_('DiffAddedGutterLineNr',    'none', 'none')
 call s:_('DiffModifiedGutterLineNr', 'none', 'none')
 call s:_('DiffRemovedGutterLineNr',  'none', 'none')
 
+" Gitgutter
+
+hi! link GitGutterAdd                DiffAddedGutter
+hi! link GitGutterChange             DiffModifiedGutter
+hi! link GitGutterChangeDelete       DiffModifiedGutter
+hi! link GitGutterDelete             DiffRemovedGutter
+
+hi! link GitGutterAddLineNr          DiffAddedGutterLineNr
+hi! link GitGutterChangeLineNr       DiffModifiedGutterLineNr
+hi! link GitGutterChangeDeleteLineNr DiffModifiedGutterLineNr
+hi! link GitGutterDeleteLineNr       DiffRemovedGutterLineNr
+
+
 "                                                                            }}}
 " Additionnal/Common groups                                         {{{1
 
