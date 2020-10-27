@@ -22,18 +22,25 @@ function! s:_ (name, ...)
     let attr = get(a:000, 2, '')
   end
 
+  let has_props = v:false
+
   let cmd = 'hi! ' . a:name
-  if !empty(fg)
+  if !empty(fg) && fg != 'none'
     let cmd .= ' guifg=' . fg
+    let has_props = v:true
   end
-  if !empty(bg)
+  if !empty(bg) && bg != 'none'
     let cmd .= ' guibg=' . bg
+    let has_props = v:true
   end
-  if !empty(attr)
+  if !empty(attr) && attr != 'none'
     let cmd .= ' gui=' . attr
+    let has_props = v:true
   end
-  execute 'hi clear ' a:name
-  execute cmd
+  execute 'hi! clear ' a:name
+  if has_props
+    execute cmd
+  end
 endfunc
 
 " }}}
@@ -79,6 +86,7 @@ let s:fg_widget    = s:fg
 let s:fg_conceal   = s:base4
 let s:fg_subtle    = s:base7
 let s:fg_highlight = color#Lighten(s:fg, 0.2)
+let s:fg_linenr    = s:base4
 
 
 let s:highlight       = s:blue
@@ -122,7 +130,7 @@ call s:_('ColorColumn',      '',       s:bg_widget, '')
 call s:_('CursorLine',       '',          s:bg_highlight)
 call s:_('CursorColumn',     '',          s:bg_highlight)
 call s:_('CursorLineNr',     s:highlight, s:bg_highlight, 'none')
-call s:_('LineNr',           s:base4,     s:bg_widget,    'none')
+call s:_('LineNr',           s:fg_linenr, s:bg_widget,    'none')
 
 call s:_('IndentGuidesEven', s:base4, '', '')
 call s:_('IndentGuidesOdd',  s:base4, '', '')
@@ -164,17 +172,20 @@ call s:_('TabLine',             s:base7, s:bg_alt,  'bold')
 call s:_('TabLineSel',          s:blue,  s:bg_current, 'bold')
 call s:_('TabLineFill',         'none',  s:bg_other,   'bold')
 
-call s:_('BufferCurrent',     s:base9,          s:bg_current,  'bold')
-call s:_('BufferCurrentMod',  s:yellow,         s:bg_current,  'bold')
-call s:_('BufferCurrentSign', s:blue,           s:bg_current,  'none')
+call s:_('BufferCurrent',       s:base9,          s:bg_current,  'bold')
+call s:_('BufferCurrentMod',    s:yellow,         s:bg_current,  'bold')
+call s:_('BufferCurrentSign',   s:blue,           s:bg_current,  'none')
+call s:_('BufferCurrentTarget', s:red,            s:bg_current,  'bold')
 
-call s:_('BufferVisible',     s:base9,          s:bg_visible,  'none')
-call s:_('BufferVisibleMod',  s:yellow,         s:bg_visible,  'none')
-call s:_('BufferVisibleSign', s:base8,          s:bg_visible,  'none')
+call s:_('BufferVisible',       s:base9,          s:bg_visible,  'none')
+call s:_('BufferVisibleMod',    s:yellow,         s:bg_visible,  'none')
+call s:_('BufferVisibleSign',   s:base8,          s:bg_visible,  'none')
+call s:_('BufferVisibleTarget', s:red,            s:bg_visible,  'bold')
 
-call s:_('BufferInactive',     s:base6,          s:bg_other,    'none')
-call s:_('BufferInactiveMod',  s:yellow,         s:bg_other,    'none')
-call s:_('BufferInactiveSign', s:base4,          s:bg_other,      'none')
+call s:_('BufferInactive',       s:base6,          s:bg_other,    'none')
+call s:_('BufferInactiveMod',    s:yellow,         s:bg_other,    'none')
+call s:_('BufferInactiveSign',   s:base4,          s:bg_other,    'none')
+call s:_('BufferInactiveTarget', s:red,            s:bg_other,    'bold')
 
 call s:_('BufferPart',        s:diff_info_fg,   s:diff_info_bg0, 'bold')
 
@@ -205,7 +216,7 @@ call s:_('Conceal',         s:fg_conceal, 'none', '')
 call s:_('SpecialKey',      s:violet,     'none', 'bold')
 call s:_('NonText',         s:fg_alt,     '',     'bold')
 call s:_('MatchParen',      s:red,        'none', 'bold')
-call s:_('Whitespace',      s:fg_subtle,  '',     '')
+call s:_('Whitespace',      s:base4,      '',     '')
 
 
 call s:_('Highlight',       '', color#Darken(s:highlight, 0.5), 'none')
@@ -352,9 +363,9 @@ call s:_('DiffAddedGutter',          s:diff_add_fg,  'none', 'bold')
 call s:_('DiffModifiedGutter',       s:diff_info_fg, 'none', 'bold')
 call s:_('DiffRemovedGutter',        s:gh_danger_fg, 'none', 'bold')
 
-call s:_('DiffAddedGutterLineNr',    'none', 'none')
-call s:_('DiffModifiedGutterLineNr', 'none', 'none')
-call s:_('DiffRemovedGutterLineNr',  'none', 'none')
+call s:_('DiffAddedGutterLineNr',    s:fg_linenr, 'none', 'none')
+call s:_('DiffModifiedGutterLineNr', s:fg_linenr, 'none', 'none')
+call s:_('DiffRemovedGutterLineNr',  s:fg_linenr, 'none', 'none')
 
 " Gitgutter
 
