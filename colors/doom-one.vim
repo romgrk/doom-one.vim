@@ -100,7 +100,7 @@ let s:diff_info_bg1 = color#Mix('#D8EEFD', s:bg, 0.8)
 
 let s:diff_add_fg  = s:green
 let s:diff_add_fg0 = color#Mix(s:green,   s:fg, 0.4)
-let s:diff_add_bg0 = color#Mix('#acf2bd', s:bg, 0.4)
+let s:diff_add_bg0 = color#Mix('#506d5b', s:bg, 0.4)
 let s:diff_add_bg1 = color#Mix('#acf2bd', s:bg, 0.6)
 let s:diff_add_bg2 = color#Mix('#acf2bd', s:bg, 0.8)
 
