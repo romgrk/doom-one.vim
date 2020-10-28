@@ -172,8 +172,8 @@ call s:_('TabLine',             s:base7, s:bg_alt,  'bold')
 call s:_('TabLineSel',          s:blue,  s:bg_current, 'bold')
 call s:_('TabLineFill',         'none',  s:bg_other,   'bold')
 
-call s:_('BufferCurrent',       s:base9,          s:bg_current,  'bold')
-call s:_('BufferCurrentMod',    s:yellow,         s:bg_current,  'bold')
+call s:_('BufferCurrent',       s:base9,          s:bg_current,  'none')
+call s:_('BufferCurrentMod',    s:yellow,         s:bg_current,  'none')
 call s:_('BufferCurrentSign',   s:blue,           s:bg_current,  'none')
 call s:_('BufferCurrentTarget', s:red,            s:bg_current,  'bold')
 
