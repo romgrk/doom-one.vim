@@ -71,14 +71,15 @@ let s:cyan       = '#46D9FF'
 let s:dark_cyan  = '#5699AF'
 let s:white      = '#efefef'
 
-let s:bg            = '#282c34'
-let s:bg_alt        = '#21242b'
-let s:bg_highlight  = '#2E323C'
-let s:bg_popup      = '#3E4556'
-let s:bg_widget     = s:bg
-let s:bg_statusline = s:bg_popup
-let s:bg_visual     = color#Lighten(s:base4, 0.3)
-let s:bg_selection  = s:dark_blue
+let s:bg             = '#282c34'
+let s:bg_alt         = '#21242b'
+let s:bg_highlight   = '#2E323C'
+let s:bg_popup       = '#3E4556'
+let s:bg_widget      = s:bg
+let s:bg_statusline  = s:bg_popup
+let s:bg_visual      = color#Lighten(s:base4, 0.3)
+let s:bg_selection   = s:dark_blue
+let s:bg_highlighted = '#4A4A45'
 
 let s:fg           = '#bbc2cf'
 let s:fg_alt       = '#5B6268'
@@ -117,7 +118,8 @@ call s:_('Normal',            s:fg,           s:bg)
 call s:_('EndOfBuffer',       s:fg,           s:bg)
 call s:_('NormalPopup',       s:fg_highlight, s:bg_popup)
 call s:_('NormalPopover',     s:fg_highlight, s:bg_popup)
-call s:_('NormalPopupPrompt', s:base7,        s:bg_highlight, 'bold')
+call s:_('NormalPopupPrompt', s:base7,        color#Darken(s:bg_popup, 0.3), 'bold')
+call s:_('NormalPopupSubtle', s:base6,        s:bg_popup)
 
 call s:_('Cursor',           '', s:base0,  'reverse')
 call s:_('SecondaryCursor',  '', s:highlight, 'none')
@@ -132,6 +134,7 @@ call s:_('CursorColumn',     '',          s:bg_highlight)
 call s:_('CursorLineNr',     s:highlight, s:bg_highlight, 'none')
 call s:_('LineNr',           s:fg_linenr, s:bg_widget,    'none')
 
+call s:_('IndentGuide',      s:base4, '', '')
 call s:_('IndentGuidesEven', s:base4, '', '')
 call s:_('IndentGuidesOdd',  s:base4, '', '')
 
@@ -219,8 +222,8 @@ call s:_('MatchParen',      s:red,        'none', 'bold')
 call s:_('Whitespace',      s:base4,      '',     '')
 
 
-call s:_('Highlight',       '', color#Darken(s:highlight, 0.5), 'none')
-call s:_('HighlightSubtle', '', color#Darken(s:highlight, 0.5), 'none')
+call s:_('Highlight',       '', s:bg_highlighted, 'none')
+call s:_('HighlightSubtle', '', s:bg_highlighted, 'none')
 
 call s:_('Question',        s:green, '', 'bold')
 
