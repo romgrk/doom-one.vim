@@ -190,6 +190,8 @@ call s:_('BufferInactiveMod',    s:yellow,         s:bg_other,    'none')
 call s:_('BufferInactiveSign',   s:base4,          s:bg_other,    'none')
 call s:_('BufferInactiveTarget', s:red,            s:bg_other,    'bold')
 
+call s:_('BufferTabpages',       s:blue,           s:bg_statusline, 'bold')
+
 call s:_('BufferPart',        s:diff_info_fg,   s:diff_info_bg0, 'bold')
 
 let g:icons = extend(get(g:, 'icons', {}), {
