@@ -195,19 +195,6 @@ call s:_('BufferTabpageFill',    s:base4,          s:bg_other,    'bold')
 
 call s:_('BufferPart',        s:diff_info_fg,   s:diff_info_bg0, 'bold')
 
-let g:icons = extend(get(g:, 'icons', {}), {
-\  'bufferline_separator_active':   '▎',
-\  'bufferline_separator_inactive': '▎',
-\  'gitgutter_sign_added':            "\u00a0│",
-\  'gitgutter_sign_removed':          "\u00a0│",
-\  'gitgutter_sign_modified':         "\u00a0│",
-\  'gitgutter_sign_modified_removed': "\u00a0│",
-\})
-let gitgutter_sign_added            = g:icons.gitgutter_sign_added
-let gitgutter_sign_removed          = g:icons.gitgutter_sign_removed
-let gitgutter_sign_modified         = g:icons.gitgutter_sign_modified
-let gitgutter_sign_modified_removed = g:icons.gitgutter_sign_modified_removed
-
 " }}}
 " Search, Highlight, Conceal, Messages                                       {{{
 
