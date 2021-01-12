@@ -183,7 +183,7 @@ call s:_('BufferCurrentMod',    s:yellow,         s:bg_current,  'none')
 call s:_('BufferCurrentSign',   s:blue,           s:bg_current,  'none')
 call s:_('BufferCurrentTarget', s:red,            s:bg_current,  'bold')
 
-call s:_('BufferVisible',       s:base9,          s:bg_visible,  'none')
+call s:_('BufferVisible',       s:base7,          s:bg_visible,  'none')
 call s:_('BufferVisibleIndex',  s:base9,          s:bg_visible,  'none')
 call s:_('BufferVisibleMod',    s:yellow,         s:bg_visible,  'none')
 call s:_('BufferVisibleSign',   s:base4,          s:bg_visible,  'none')
@@ -275,7 +275,7 @@ hi! link CommentLabel   CommentBold
 hi! link CommentSection CommentBold
 hi! link Noise Comment
 
-call s:_('Global',               s:magenta, '',        'none')
+call s:_('Global',               s:violet, '',         'bold')
 call s:_('PreProc',              s:magenta, '',        'none')
 call s:_('Macro',                s:magenta, '',        'bold')
 call s:_('Define',               s:magenta, '',        'bold')
