@@ -129,7 +129,7 @@ call s:_('SecondaryCursor',  '', s:highlight, 'none')
 call s:_('Folded',           s:base7,  s:bg_highlight, 'none')
 call s:_('FoldColumn',       s:fg_alt, s:bg_widget, '')
 call s:_('SignColumn',       '',       s:bg_widget, '')
-call s:_('ColorColumn',      '',       s:bg_widget, '')
+call s:_('ColorColumn',      '',       s:bg_highlight, '')
 
 call s:_('CursorLine',       '',          s:bg_highlight)
 call s:_('CursorColumn',     '',          s:bg_highlight)
