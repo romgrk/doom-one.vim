@@ -117,7 +117,7 @@ let s:gh_danger_bg2 = color#Mix('#ffdce0', s:bg, 0.9)
 " General UI                                                                 {{{
 
 call s:_('Normal',            s:fg,           s:bg)
-call s:_('EndOfBuffer',       s:fg,           s:bg)
+call s:_('EndOfBuffer',       s:bg,           s:bg)
 call s:_('NormalPopup',       s:fg_highlight, s:bg_popup)
 call s:_('NormalPopover',     s:fg_highlight, s:bg_popup)
 call s:_('NormalPopupPrompt', s:base7,        color#Darken(s:bg_popup, 0.3), 'bold')
