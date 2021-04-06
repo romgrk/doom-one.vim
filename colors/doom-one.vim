@@ -522,7 +522,7 @@ hi! link TSOperator Operator
 hi! link TSParameter Argument
 hi! link TSParameterReference Argument
 hi! link TSProperty Property
-hi! link TSPunctBracket SpecialChar
+hi! link TSPunctBracket Delimiter
 hi! link TSPunctDelimiter Delimiter
 hi! link TSPunctSpecial DelimiterAlt
 hi! link TSRepeat Repeat
