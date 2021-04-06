@@ -228,6 +228,7 @@ call s:_('Section',         s:magenta, '', 'bold')
 call s:_('Title',           s:violet,  '', 'bold')
 
 call s:_('Bold', '', '', 'bold')
+call s:_('Emphasis', s:green, '', 'bold')
 
 " Text levels                                                                {{{
 
@@ -290,6 +291,7 @@ call s:_('Label',                s:blue, '',        '')
 call s:_('Operator',             s:blue, '',        '')
 
 call s:_('Constant',             s:violet, '',        'bold')
+call s:_('ConstantBuiltin',      s:magenta, '',       'bold')
 
 call s:_('Number',               s:orange, '',        'none')
 call s:_('Float',                s:orange, '',        'none')
@@ -313,8 +315,10 @@ call s:_('SpecialBold',          s:violet, '',        'bold')
 call s:_('Identifier',           color#Lighten(s:magenta, 0.2), '',        'none')
 call s:_('Argument',             color#Lighten(s:magenta, 0.2), '',        'none')
 call s:_('Variable',             color#Lighten(s:magenta, 0.2), '',        'none')
+call s:_('VariableBuiltin',      color#Lighten(s:magenta, 0.2), '',        'bold')
 
 call s:_('Function',             s:yellow, '',        'none')
+call s:_('FunctionBuiltin',      s:orange, '',        'bold')
 call s:_('Method',               s:yellow, '',        'bold')
 
 call s:_('Symbol',               s:magenta, '',        'none')
@@ -327,6 +331,7 @@ call s:_('Property',             s:magenta, '',        'none')
 
 
 call s:_('Type',                 s:yellow, '',        'none')
+call s:_('TypeBuiltin',          s:yellow, '',        'bold')
 call s:_('StorageClass',         s:blue, '',        'none')
 call s:_('Class',                s:blue, '',        'none')
 call s:_('Structure',            s:blue, '',        'none')
@@ -480,5 +485,59 @@ hi! link objcMethodArg Normal
 hi! link objcMessageName Identifier
 
 " 1}}}
+
+" 1}}}
+
+" Neovim Treesitter                                                         {{{2
+
+hi! link TSAnnotation PreProc
+hi! link TSAttribute Macro
+hi! link TSBoolean Boolean
+hi! link TSCharacter Character
+hi! link TSConditional Conditional
+hi! link TSConstant Constant
+hi! link TSConstBuiltin ConstantBuiltin
+hi! link TSConstMacro Macro
+hi! link TSConstructor Method
+hi! link TSEmphasis Emphasis
+hi! link TSError Error
+hi! link TSException Error
+hi! link TSField Variable
+hi! link TSFloat Float
+hi! link TSFunction Function
+hi! link TSFuncBuiltin FunctionBuiltin
+hi! link TSFuncMacro Function
+hi! link TSInclude Include
+hi! link TSKeyword Keyword
+hi! link TSKeywordFunction Function
+hi! link TSKeywordOperator Operator
+hi! link TSLabel Label
+hi! link TSLiteral Constant
+hi! link TSMethod Method
+hi! link TSNamespace Directory
+hi! link TSNumber Number
+hi! link TSOperator Operator
+hi! link TSParameter Argument
+hi! link TSParameterReference Argument
+hi! link TSProperty Property
+hi! link TSPunctBracket SpecialChar
+hi! link TSPunctDelimiter Delimiter
+hi! link TSPunctSpecial DelimiterAlt
+hi! link TSRepeat Repeat
+hi! link TSString String
+hi! link TSStringEscape StringDelimiter
+hi! link TSStringRegex Regexp
+hi! link TSStrong Bold
+hi! link TSStructure Structure
+hi! link TSTag Tag
+hi! link TSTagDelimiter Delimiter
+hi! link TSText String
+hi! link TSTitle Title
+hi! link TSType Type
+hi! link TSTypeBuiltin TypeBuiltin
+hi! link TSUnderline Underlined
+hi! link TSURI URL
+hi! link TSVariable Variable
+hi! link TSVariableBuiltin VariableBuiltin
 
 " 1}}}
