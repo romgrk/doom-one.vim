@@ -531,7 +531,7 @@ hi! link TSStringEscape StringDelimiter
 hi! link TSStringRegex Regexp
 hi! link TSStrong Bold
 hi! link TSStructure Structure
-hi! link TSTag Tag
+hi! link TSTag Keyword
 hi! link TSTagDelimiter Delimiter
 hi! link TSText String
 hi! link TSTitle Title
