@@ -291,6 +291,8 @@ call s:_('Operator',             s:blue, '',        '')
 
 call s:_('Constant',             s:violet, '',        'bold')
 
+call s:_('Conditional',          s:blue, '',        '')
+
 call s:_('Number',               s:orange, '',        'none')
 call s:_('Float',                s:orange, '',        'none')
 call s:_('Boolean',              s:orange, '',        'none')
