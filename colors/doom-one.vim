@@ -200,6 +200,27 @@ call s:_('BufferTabpageFill',    s:base4,          s:bg_other,    'bold')
 
 call s:_('BufferPart',        s:diff_info_fg,   s:diff_info_bg0, 'bold')
 
+if has("nvim")
+  let g:terminal_color_0 = s:bg
+  let g:terminal_color_1 = s:red
+  let g:terminal_color_2 = s:green_alt
+  let g:terminal_color_3 = s:orange
+  let g:terminal_color_4 = s:dark_blue
+  let g:terminal_color_5 = s:magenta
+  let g:terminal_color_6 = s:dark_cyan
+  let g:terminal_color_7 = s:fg
+  let g:terminal_color_8 = s:grey
+  let g:terminal_color_9 = s:orange
+  let g:terminal_color_10 = s:green
+  let g:terminal_color_11 = s:yellow
+  let g:terminal_color_12 = s:blue
+  let g:terminal_color_13 = s:violet
+  let g:terminal_color_14 = s:cyan
+  let g:terminal_color_15 = s:white
+  let g:terminal_color_background = s:bg
+  let g:terminal_color_foreground = s:fg
+endif
+
 " }}}
 " Search, Highlight, Conceal, Messages                                       {{{
 
