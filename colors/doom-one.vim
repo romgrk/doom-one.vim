@@ -200,7 +200,7 @@ call s:_('BufferTabpageFill',    s:base4,          s:bg_other,    'bold')
 
 call s:_('BufferPart',        s:diff_info_fg,   s:diff_info_bg0, 'bold')
 
-if has("nvim")
+if has("nvim") && g:doom_one_terminal_colors
   let g:terminal_color_0 = s:bg
   let g:terminal_color_1 = s:red
   let g:terminal_color_2 = s:green_alt
