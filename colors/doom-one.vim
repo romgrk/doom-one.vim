@@ -342,7 +342,7 @@ call s:_('VariableBuiltin',      color#Lighten(s:magenta, 0.2), '',        'bold
 
 call s:_('Function',             s:yellow, '',        'none')
 call s:_('FunctionBuiltin',      s:orange, '',        'bold')
-call s:_('Method',               s:yellow, '',        'bold')
+call s:_('Method',               s:yellow, '',        'none')
 
 call s:_('Symbol',               s:magenta, '',        'none')
 call s:_('Control',              s:magenta, '',        'none')
