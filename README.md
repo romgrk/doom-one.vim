@@ -19,5 +19,5 @@ Plug 'romgrk/doom-one.vim'
 
 Neovim terminal coloring can be enabled as by adding the following above the plugin includes:
 ```vim
-let g:doom_one_terminal_colors = 1
+let g:doom_one_terminal_colors = v:true
 ```
