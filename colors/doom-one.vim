@@ -425,6 +425,13 @@ hi!  link SneakStreakMask         EasyMotionShadeDefault
 
 " }}}
 
+" Indent plugin {{{
+
+hi! link IndentBlanklineChar      IndentGuide
+hi! link IndentBlanklineSpaceChar IndentGuide
+
+" }}}
+
 " Languages/Others                                                    {{{1
 
 " Help                                                                      {{{2
