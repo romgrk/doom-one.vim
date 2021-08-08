@@ -581,10 +581,9 @@ hi! link TSURI URL
 hi! link TSVariable NormalText
 hi! link TSVariableBuiltin VariableBuiltin
 
-" TSField is annoying because some grammars use it for *all* identifiers -_-
-" Therefore we disable it in general, and add specific cases.
-hi! link TSField NormalText
-hi! link yamlTSField Variable
+" Some grammars use TSField too liberally. Fix here.
+hi! link TSField Property
+hi! link pythonTSField NormalText
 
 
 " 1}}}
