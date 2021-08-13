@@ -122,6 +122,7 @@ call s:_('NormalPopup',       s:fg_highlight, s:bg_popup)
 call s:_('NormalPopover',     s:fg_highlight, s:bg_popup)
 call s:_('NormalPopupPrompt', s:base7,        color#Darken(s:bg_popup, 0.3), 'bold')
 call s:_('NormalPopupSubtle', s:base6,        s:bg_popup)
+call s:_('NormalText',        s:fg,           'none')
 
 call s:_('Cursor',           '', s:base0,  'reverse')
 call s:_('SecondaryCursor',  '', s:highlight, 'none')
@@ -339,7 +340,7 @@ call s:_('SpecialBold',          s:violet, '',        'bold')
 call s:_('Identifier',           color#Lighten(s:magenta, 0.2), '',        'none')
 call s:_('Argument',             color#Lighten(s:magenta, 0.2), '',        'none')
 call s:_('Variable',             color#Lighten(s:magenta, 0.2), '',        'none')
-call s:_('VariableBuiltin',      color#Lighten(s:magenta, 0.2), '',        'bold')
+call s:_('VariableBuiltin',      color#Lighten(s:magenta, 0.2), '',        'none')
 
 call s:_('Function',             s:magenta, '',        'none')
 call s:_('FunctionBuiltin',      s:orange, '',        'bold')
@@ -408,11 +409,20 @@ hi! link GitGutterDeleteLineNr       DiffRemovedGutterLineNr
 
 
 "                                                                            }}}
-" Additionnal/Common groups                                         {{{1
+" Debugger                                                                   {{{
+
+call s:_('DapUIFloatBorder',      s:base5, '', '')
+
+call s:_('DapCurrentLine',        '',       '#444400', '')
+call s:_('DapCurrentLineNum',     s:yellow, '#5E5E00', 'bold')
+call s:_('DapBreakpointNum',      s:red,    '',        'bold')
+call s:_('DapLogpointNum',        s:orange, '',        'bold')
+
 
 call s:_('DbgCurrent',           '#DEEBFE', '#345FA8', '')
 call s:_('DbgBreakPt',           '',        '#4F0037', '')
 
+"                                                                            }}}
 " Jumping around {{{
 
 call s:_('JumpTarget', s:red, '', 'bold')
@@ -422,6 +432,13 @@ hi!  link Sneak                   JumpTarget
 hi!  link SneakPluginTarget       JumpTarget
 hi!  link SneakStreakTarget       JumpTarget
 hi!  link SneakStreakMask         EasyMotionShadeDefault
+
+" }}}
+
+" Indent plugin {{{
+
+hi! link IndentBlanklineChar      IndentGuide
+hi! link IndentBlanklineSpaceChar NormalText
 
 " }}}
 
@@ -526,7 +543,7 @@ hi! link TSConstructor Method
 hi! link TSEmphasis Emphasis
 hi! link TSError Error
 hi! link TSException Error
-hi! link TSField Variable
+hi! link TSField NormalText
 hi! link TSFloat Float
 hi! link TSFunction Function
 hi! link TSFuncBuiltin FunctionBuiltin
@@ -561,7 +578,12 @@ hi! link TSType Type
 hi! link TSTypeBuiltin TypeBuiltin
 hi! link TSUnderline Underlined
 hi! link TSURI URL
-hi! link TSVariable Variable
+hi! link TSVariable NormalText
 hi! link TSVariableBuiltin VariableBuiltin
 
-" 1}}}'
+" Some grammars use TSField too liberally. Fix here.
+hi! link TSField Property
+hi! link pythonTSField NormalText
+
+
+" 1}}}
