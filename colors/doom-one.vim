@@ -89,7 +89,7 @@ let s:fg_widget    = s:fg
 let s:fg_conceal   = s:base4
 let s:fg_subtle    = s:base7
 let s:fg_highlight = color#Lighten(s:fg, 0.2)
-let s:fg_linenr    = s:base4
+let s:fg_linenr    = color#Mix(s:base4, s:base5, 0.3)
 
 
 let s:highlight       = s:blue
@@ -438,7 +438,7 @@ hi!  link SneakStreakMask         EasyMotionShadeDefault
 " Indent plugin {{{
 
 hi! link IndentBlanklineChar      IndentGuide
-hi! link IndentBlanklineSpaceChar NormalText
+hi! link IndentBlanklineSpaceChar IndentGuide
 
 " }}}
 
