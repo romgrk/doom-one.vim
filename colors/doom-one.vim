@@ -301,10 +301,10 @@ hi! link Noise Comment
 
 call s:_('Global',               s:violet, '',         'bold')
 call s:_('PreProc',              s:magenta, '',        'none')
-call s:_('Macro',                s:blue, '',        'bold')
-call s:_('Define',               s:blue, '',        'bold')
+call s:_('Macro',                s:blue, '',           'bold')
+call s:_('Define',               s:blue, '',           'bold')
 call s:_('PreCondit',            s:magenta, '',        'bold')
-call s:_('Include',              s:blue, '',        'bold')
+call s:_('Include',              s:blue, '',           'bold')
 
 call s:_('Repeat',               s:blue, '',        '')
 call s:_('Keyword',              s:blue, '',        '')
@@ -342,9 +342,9 @@ call s:_('Argument',             color#Lighten(s:magenta, 0.2), '',        'none
 call s:_('Variable',             color#Lighten(s:magenta, 0.2), '',        'none')
 call s:_('VariableBuiltin',      color#Lighten(s:magenta, 0.2), '',        'none')
 
-call s:_('Function',             s:magenta, '',        'none')
+call s:_('Function',             s:yellow, '',        'none')
 call s:_('FunctionBuiltin',      s:orange, '',        'bold')
-call s:_('Method',               s:magenta, '',        'none')
+call s:_('Method',               s:yellow, '',        'none')
 
 call s:_('Symbol',               s:magenta, '',        'none')
 call s:_('Control',              s:magenta, '',        'none')
@@ -409,6 +409,11 @@ hi! link GitGutterDeleteLineNr       DiffRemovedGutterLineNr
 
 
 "                                                                            }}}
+" Biscuit                                                                    {{{
+
+call s:_('BiscuitColor', s:base5, 'none', 'none')
+
+"                                                                            }}}
 " Debugger                                                                   {{{
 
 call s:_('DapUIFloatBorder',      s:base5, '', '')
@@ -437,8 +442,9 @@ hi!  link SneakStreakMask         EasyMotionShadeDefault
 
 " Indent plugin {{{
 
-hi! link IndentBlanklineChar      IndentGuide
-hi! link IndentBlanklineSpaceChar IndentGuide
+hi! link IndentBlanklineChar               IndentGuide
+hi! link IndentBlanklineSpaceChar          IndentGuide
+hi! link IndentBlanklineSpaceCharBlankline IndentGuide
 
 " }}}
 
