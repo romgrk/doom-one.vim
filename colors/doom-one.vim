@@ -109,9 +109,9 @@ let s:diff_add_bg2 = color#Mix('#acf2bd', s:bg, 0.8)
 
 let s:gh_danger_fg  = s:red
 let s:gh_danger_fg0 = color#Mix(s:red,     s:fg, 0.6)
-let s:gh_danger_bg0 = color#Mix('#ffdce0', s:bg, 0.6)
-let s:gh_danger_bg1 = color#Mix('#ffdce0', s:bg, 0.8)
-let s:gh_danger_bg2 = color#Mix('#ffdce0', s:bg, 0.9)
+let s:gh_danger_bg0 = color#Mix('#FBB0B9', s:bg, 0.6)
+let s:gh_danger_bg1 = color#Mix('#FBB0B9', s:bg, 0.8)
+let s:gh_danger_bg2 = color#Mix('#FBB0B9', s:bg, 0.9)
 
 " }}}
 " General UI                                                                 {{{
@@ -378,10 +378,10 @@ hi! clear DiffChange
 hi! clear DiffText
 hi! clear DiffDelete
 
-call s:_('DiffAdd',      '',             s:diff_add_bg2, 'none')
-call s:_('DiffChange',   '',             s:diff_add_bg2, 'none')
-call s:_('DiffText',     '',             s:diff_add_bg0, 'none')
-call s:_('DiffDelete',   '',             s:gh_danger_bg1, 'none')
+call s:_('DiffAdd',    '',              s:diff_add_bg2,  'none')
+call s:_('DiffChange', '',              s:diff_add_bg2,  'none')
+call s:_('DiffText',   '',              s:diff_add_bg0,  'none')
+call s:_('DiffDelete', s:gh_danger_bg0, s:gh_danger_bg1, 'none')
 
 call s:_('DiffAdded',    s:diff_add_fg0,  s:diff_add_bg2,  'none')
 call s:_('DiffModified', s:fg,            s:diff_info_bg0, 'none')
