@@ -166,9 +166,20 @@ call s:_('PmenuSelBold', s:highlight_color, s:highlight, 'bold')
 call s:_('PmenuSbar',    '',                s:bg_alt)
 call s:_('PmenuThumb',   '#666660',         '#666660')
 
+hi! link NormalFloat Pmenu
+call s:_('FloatBorder', s:fg_alt, s:bg_popup)
+
 if exists('&pumblend')
   set pumblend=20
 end
+
+" Plugin: Incline
+
+call s:_('InclineNormal',   color#Darken(s:fg,  0), color#Lighten(s:bg, 30))
+call s:_('InclineNormalNC', color#Darken(s:fg, 10), color#Lighten(s:bg, 30))
+
+
+" Plugin: Barbar
 
 let s:bg_current = s:bg
 let s:bg_visible = s:bg
