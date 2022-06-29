@@ -425,6 +425,12 @@ hi! link GitGutterDeleteLineNr       DiffRemovedGutterLineNr
 call s:_('BiscuitColor', s:base5, 'none', 'none')
 
 "                                                                            }}}
+" Clap                                                                       {{{
+
+hi! link ClapDisplay NormalPopover
+hi! link ClapPreview NormalPopupPrompt
+
+"                                                                            }}}
 " Debugger                                                                   {{{
 
 call s:_('DapUIFloatBorder',      s:base5, '', '')
