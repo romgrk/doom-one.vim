@@ -431,6 +431,12 @@ hi! link ClapDisplay NormalPopover
 hi! link ClapPreview NormalPopupPrompt
 
 "                                                                            }}}
+" Treesitter Context
+
+call s:_('TreesitterContext',           s:fg,                      s:bg_popup)
+call s:_('TreesitterContextLineNumber', color#Lighten(s:fg_linenr, 0.4), s:bg_popup)
+
+"                                                                            }}}
 " Debugger                                                                   {{{
 
 call s:_('DapUIFloatBorder',      s:base5, '', '')
