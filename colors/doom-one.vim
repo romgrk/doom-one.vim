@@ -175,8 +175,8 @@ end
 
 " Plugin: Incline
 
-call s:_('InclineNormal',   color#Darken(s:fg,  0), color#Lighten(s:bg, 30))
-call s:_('InclineNormalNC', color#Darken(s:fg, 10), color#Lighten(s:bg, 30))
+call s:_('InclineNormal',   color#Darken(s:fg, 40), 'none')
+call s:_('InclineNormalNC', color#Darken(s:fg, 40), 'none')
 
 
 " Plugin: Barbar
