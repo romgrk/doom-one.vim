@@ -295,7 +295,7 @@ hi! link Todo       TextWarningBold
 
 
 " }}}
-" Main Syntax                                                               {{{1
+" Main Syntax                                                                {{{
 
 call s:_('Tag',                  s:tag, '',        'underline')
 call s:_('Link',                 s:tag, '',        'underline')
@@ -431,7 +431,7 @@ hi! link ClapDisplay NormalPopover
 hi! link ClapPreview NormalPopupPrompt
 
 "                                                                            }}}
-" Treesitter Context
+" Treesitter Context                                                         {{{
 
 call s:_('TreesitterContext',           s:fg,                      s:bg_popup)
 call s:_('TreesitterContextLineNumber', color#Lighten(s:fg_linenr, 0.4), s:bg_popup)
@@ -451,7 +451,7 @@ call s:_('DbgCurrent',           '#DEEBFE', '#345FA8', '')
 call s:_('DbgBreakPt',           '',        '#4F0037', '')
 
 "                                                                            }}}
-" Jumping around {{{
+" Plugin: EasyMotion, Sneak {{{
 
 call s:_('JumpTarget', s:red, '', 'bold')
 
@@ -462,15 +462,18 @@ hi!  link SneakStreakTarget       JumpTarget
 hi!  link SneakStreakMask         EasyMotionShadeDefault
 
 " }}}
-
-" Indent plugin {{{
+" Plugin: IndentBlankline {{{
 
 hi! link IndentBlanklineChar               IndentGuide
 hi! link IndentBlanklineSpaceChar          IndentGuide
 hi! link IndentBlanklineSpaceCharBlankline IndentGuide
 
 " }}}
+" Plugin: Illuminate {{{
 
+call s:_('illuminatedWord', '', color#Lighten(s:bg_highlight, 0.2))
+
+" }}}
 " Languages/Others                                                    {{{1
 
 " Help                                                                      {{{2
