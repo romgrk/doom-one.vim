@@ -167,7 +167,7 @@ call s:_('PmenuSbar',    '',                s:bg_alt)
 call s:_('PmenuThumb',   '#666660',         '#666660')
 
 hi! link NormalFloat Pmenu
-call s:_('FloatBorder', s:fg_alt, s:bg_popup)
+call s:_('FloatBorder', s:fg_alt, s:bg)
 
 if exists('&pumblend')
   set pumblend=20
