@@ -93,7 +93,7 @@ let s:fg_linenr    = color#Mix(s:base4, s:base5, 0.3)
 
 
 let s:highlight       = s:blue
-let s:highlight_color = s:base0
+let s:hightlight_fg = s:base0
 
 let s:tag    = color#Mix(s:blue, s:cyan)
 
@@ -161,8 +161,8 @@ call s:_('Separator', s:fg_alt, 'none')
 call s:_('VertSplit', s:base4,   s:bg, 'none')
 
 call s:_('Pmenu',        s:fg,              s:bg_popup)
-call s:_('PmenuSel',     s:highlight_color, s:highlight)
-call s:_('PmenuSelBold', s:highlight_color, s:highlight, 'bold')
+call s:_('PmenuSel',     s:hightlight_fg, s:highlight)
+call s:_('PmenuSelBold', s:hightlight_fg, s:highlight, 'bold')
 call s:_('PmenuSbar',    '',                s:bg_alt)
 call s:_('PmenuThumb',   '#666660',         '#666660')
 
@@ -238,11 +238,12 @@ endif
 " Search, Highlight, Conceal, Messages                                       {{{
 
 " let s:bg_search = color#Mix(s:bg, s:yellow, 0.2)
-let s:bg_search = s:yellow
+let s:bg_search         = s:yellow
+let s:bg_search_current = s:orange
 
-call s:_('Search',          s:highlight_color, s:bg_search,      'none')
-call s:_('IncSearch',       s:highlight_color, s:bg_search,      'none')
-call s:_('IncSearchCursor', '', '',               'reverse')
+call s:_('Search',          s:hightlight_fg, s:bg_search,         'none')
+call s:_('IncSearch',       s:hightlight_fg, s:bg_search_current, 'none')
+call s:_('IncSearchCursor', s:hightlight_fg, s:white,             'none')
 
 call s:_('Conceal',         s:fg_conceal, 'none', '')
 call s:_('SpecialKey',      s:violet,     'none', 'bold')
@@ -479,6 +480,12 @@ hi! link IndentBlanklineSpaceCharBlankline IndentGuide
 " Plugin: Illuminate {{{
 
 call s:_('illuminatedWord', '', color#Lighten(s:bg_highlight, 0.2))
+
+" }}}
+" Plugin: Sidebar {{{
+
+" call s:_('SidebarNvimSectionSeparator', s:base6)
+hi! link SidebarNvimSectionSeparator VertSplit
 
 " }}}
 " Languages/Others                                                    {{{1
