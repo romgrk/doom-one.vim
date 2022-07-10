@@ -453,7 +453,8 @@ call s:_('DbgBreakPt',           '',        '#4F0037', '')
 "                                                                            }}}
 " Plugin: EasyMotion, Sneak {{{
 
-call s:_('JumpTarget', s:red, '', 'bold')
+call s:_('JumpTarget',          s:red,  '', 'bold')
+call s:_('JumpTargetSecondary', s:blue, '', 'bold')
 
 hi!  link EasyMotionShadeDefault  Comment
 hi!  link EasyMotionTargetDefault JumpTarget
@@ -464,8 +465,8 @@ hi!  link SneakStreakTarget       JumpTarget
 hi!  link SneakStreakMask         EasyMotionShadeDefault
 
 hi! link LeapLabelPrimary   JumpTarget
-hi! link LeapLabelSecondary JumpTarget
-hi! link LeapBackdrop     EasyMotionShadeDefault
+hi! link LeapLabelSecondary JumpTargetSecondary
+hi! link LeapBackdrop       EasyMotionShadeDefault
 
 " }}}
 " Plugin: IndentBlankline {{{
