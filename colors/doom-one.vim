@@ -455,11 +455,17 @@ call s:_('DbgBreakPt',           '',        '#4F0037', '')
 
 call s:_('JumpTarget', s:red, '', 'bold')
 
+hi!  link EasyMotionShadeDefault  Comment
 hi!  link EasyMotionTargetDefault JumpTarget
+
 hi!  link Sneak                   JumpTarget
 hi!  link SneakPluginTarget       JumpTarget
 hi!  link SneakStreakTarget       JumpTarget
 hi!  link SneakStreakMask         EasyMotionShadeDefault
+
+hi! link LeapLabelPrimary   JumpTarget
+hi! link LeapLabelSecondary JumpTarget
+hi! link LeapBackdrop     EasyMotionShadeDefault
 
 " }}}
 " Plugin: IndentBlankline {{{
