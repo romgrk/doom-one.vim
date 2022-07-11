@@ -90,6 +90,7 @@ let s:fg_conceal   = s:base4
 let s:fg_subtle    = s:base7
 let s:fg_highlight = color#Lighten(s:fg, 0.2)
 let s:fg_linenr    = color#Mix(s:base4, s:base5, 0.3)
+let s:fg_separator = s:base4
 
 
 let s:highlight       = s:blue
@@ -158,7 +159,7 @@ call s:_('StatusLinePart',   s:base6,  s:bg_statusline, 'bold')
 call s:_('StatusLinePartNC', s:base6,  s:bg_statusline, 'bold')
 
 call s:_('Separator', s:fg_alt, 'none')
-call s:_('VertSplit', s:base4,   s:bg, 'none')
+call s:_('VertSplit', s:fg_separator,   s:bg, 'none')
 
 call s:_('Pmenu',        s:fg,              s:bg_popup)
 call s:_('PmenuSel',     s:hightlight_fg, s:highlight)
@@ -270,11 +271,12 @@ call s:_('Emphasis', s:green, '', 'bold')
 let s:text_colors = {
 \ 'Normal':  s:fg,
 \ 'Info':    s:blue,
+\ 'Hint':    s:teal,
 \ 'Success': s:green,
 \ 'Warning': s:yellow,
 \ 'Debug':   s:yellow,
 \ 'Error':   s:red,
-\ 'Special': s:violet,
+\ 'Special': s:magenta,
 \ 'Muted':   s:base7,
 \}
 for key in keys(s:text_colors)
@@ -293,6 +295,14 @@ hi! link ErrorMsg   TextError
 hi! link Error      TextError
 hi! link ModeMsg    TextSpecial
 hi! link Todo       TextWarningBold
+
+
+" LSP & Diagnostics
+
+hi link LspDiagnosticsDefaultHint TextHint
+hi link LspDiagnosticsDefaultError TextError
+hi link LspDiagnosticsDefaultWarning TextWarning
+hi link LspDiagnosticsDefaultInformation TextInfo
 
 
 " }}}
@@ -403,21 +413,25 @@ call s:_('DiffAddedGutter',          s:diff_add_fg,  'none', 'bold')
 call s:_('DiffModifiedGutter',       s:diff_info_fg, 'none', 'bold')
 call s:_('DiffRemovedGutter',        s:gh_danger_fg, 'none', 'bold')
 
+call s:_('DiffAddedText',          s:diff_add_fg,  'none', 'none')
+call s:_('DiffModifiedText',       s:diff_info_fg, 'none', 'none')
+call s:_('DiffRemovedText',        s:gh_danger_fg, 'none', 'none')
+
 call s:_('DiffAddedGutterLineNr',    s:fg_linenr, 'none', 'none')
 call s:_('DiffModifiedGutterLineNr', s:fg_linenr, 'none', 'none')
 call s:_('DiffRemovedGutterLineNr',  s:fg_linenr, 'none', 'none')
 
 " Gitgutter
 
-hi! link GitGutterAdd                DiffAddedGutter
-hi! link GitGutterChange             DiffModifiedGutter
-hi! link GitGutterChangeDelete       DiffModifiedGutter
-hi! link GitGutterDelete             DiffRemovedGutter
+hi! link GitTextAdd                DiffAddedText
+hi! link GitTextChange             DiffModifiedText
+hi! link GitTextChangeDelete       DiffModifiedText
+hi! link GitTextDelete             DiffRemovedText
 
-hi! link GitGutterAddLineNr          DiffAddedGutterLineNr
-hi! link GitGutterChangeLineNr       DiffModifiedGutterLineNr
-hi! link GitGutterChangeDeleteLineNr DiffModifiedGutterLineNr
-hi! link GitGutterDeleteLineNr       DiffRemovedGutterLineNr
+hi! link GitTextAddLineNr          DiffAddedTextLineNr
+hi! link GitTextChangeLineNr       DiffModifiedTextLineNr
+hi! link GitTextChangeDeleteLineNr DiffModifiedTextLineNr
+hi! link GitTextDeleteLineNr       DiffRemovedTextLineNr
 
 
 "                                                                            }}}
@@ -485,7 +499,23 @@ call s:_('illuminatedWord', '', color#Lighten(s:bg_highlight, 0.2))
 " Plugin: Sidebar {{{
 
 " call s:_('SidebarNvimSectionSeparator', s:base6)
-hi! link SidebarNvimSectionSeparator VertSplit
+
+call s:_('SidebarNvimNormal',           s:fg,           s:bg_alt, 'none')
+call s:_('SidebarNvimSectionSeparator', s:fg_separator, s:bg_alt)
+call s:_('SidebarNvimSectionTitle',     s:yellow, s:bg_alt, 'bold')
+
+hi! link SidebarNvimLabelCount Comment
+
+hi! link SidebarNvimGitStatusDiffAdded    DiffAddedText
+hi! link SidebarNvimGitStatusDiffRemoved  DiffRemovedText
+
+hi! link SidebarNvimLineNr Comment
+
+" }}}
+" Plugin: SearchBox {{{
+
+hi! link SearchBoxWarning TextWarning
+hi! link SearchBoxSpecial TextSpecial
 
 " }}}
 " Languages/Others                                                    {{{1
