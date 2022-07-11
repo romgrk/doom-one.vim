@@ -11,15 +11,18 @@ function! s:_ (name, ...)
   let fg = ''
   let bg = ''
   let attr = ''
+  let sp = ''
 
   if type(a:1) == 3
     let fg   = get(a:1, 0, '')
     let bg   = get(a:1, 1, '')
     let attr = get(a:1, 2, '')
+    let sp   = get(a:1, 3, '')
   else
     let fg   = get(a:000, 0, '')
     let bg   = get(a:000, 1, '')
     let attr = get(a:000, 2, '')
+    let sp   = get(a:000, 3, '')
   end
 
   let has_props = v:false
@@ -35,6 +38,10 @@ function! s:_ (name, ...)
   end
   if !empty(attr) && attr != 'none'
     let cmd .= ' gui=' . attr
+    let has_props = v:true
+  end
+  if !empty(sp) && sp != 'none'
+    let cmd .= ' guisp=' . sp
     let has_props = v:true
   end
   execute 'hi! clear ' a:name
@@ -72,6 +79,8 @@ let s:dark_cyan  = '#5699AF'
 let s:white      = '#efefef'
 
 let s:green_alt  = '#799033'
+
+let s:magenta4 = color#Darken(s:magenta, 0.0)
 
 let s:bg             = '#282c34'
 let s:bg_alt         = '#21242b'
@@ -144,7 +153,7 @@ call s:_('IndentGuidesOdd',  s:base4, '', '')
 
 call s:_('TermCursor',       s:fg,        'none',            'reverse')
 call s:_('TermCursorNC',     s:fg_alt,    'none',            'reverse')
-call s:_('TermNormal',       s:fg,        s:bg,    '')
+call s:_('TermNormal',       s:fg,        s:base0,    '')
 hi! link TermNormalNC TermNormal
 
 
@@ -276,7 +285,7 @@ let s:text_colors = {
 \ 'Warning': s:yellow,
 \ 'Debug':   s:yellow,
 \ 'Error':   s:red,
-\ 'Special': s:magenta,
+\ 'Special': s:violet,
 \ 'Muted':   s:base7,
 \}
 for key in keys(s:text_colors)
@@ -359,22 +368,22 @@ call s:_('Special',              s:violet, '',        'bold')
 call s:_('SpecialBold',          s:violet, '',        'bold')
 
 
-call s:_('Identifier',           color#Lighten(s:magenta, 0.2), '',        'none')
-call s:_('Argument',             color#Lighten(s:magenta, 0.2), '',        'none')
-call s:_('Variable',             color#Lighten(s:magenta, 0.2), '',        'none')
-call s:_('VariableBuiltin',      color#Lighten(s:magenta, 0.2), '',        'none')
+call s:_('Identifier',           s:magenta4, '',        'none')
+call s:_('Argument',             s:magenta4, '',        'none')
+call s:_('Variable',             s:magenta4, '',        'none')
+call s:_('VariableBuiltin',      s:violet, '',          'bold')
 
 call s:_('Function',             s:yellow, '',        'none')
 call s:_('FunctionBuiltin',      s:orange, '',        'bold')
 call s:_('Method',               s:yellow, '',        'none')
 
-call s:_('Symbol',               s:magenta, '',        'none')
-call s:_('Control',              s:magenta, '',        'none')
-call s:_('PredefinedIdentifier', s:magenta, '',        'none')
-call s:_('Predefined',           s:magenta, '',        'none')
+call s:_('Symbol',               s:magenta4, '',        'none')
+call s:_('Control',              s:magenta4, '',        'none')
+call s:_('PredefinedIdentifier', s:magenta4, '',        'none')
+call s:_('Predefined',           s:magenta4, '',        'none')
 
 call s:_('StaticFunc',           s:cyan, '',        'none')
-call s:_('Property',             s:magenta, '',        'none')
+call s:_('Property',             s:magenta4, '',        'none')
 
 
 call s:_('Type',                 s:yellow, '',        'none')
@@ -464,6 +473,19 @@ call s:_('DapLogpointNum',        s:orange, '',        'bold')
 
 call s:_('DbgCurrent',           '#DEEBFE', '#345FA8', '')
 call s:_('DbgBreakPt',           '',        '#4F0037', '')
+
+"                                                                            }}}
+" CoC                                                                        {{{
+
+let s:fg_inlay_hint = s:base5
+let s:sp_hint = s:teal
+
+call s:_('CocHintSign',         s:fg_inlay_hint)
+call hi#('CocRustChainingHint', s:fg_inlay_hint)
+
+call s:_('CocHintHighlight',    '', '', 'undercurl', s:sp_hint)
+call s:_('CocUnusedHighlight',  '', '', 'undercurl', s:sp_hint)
+
 
 "                                                                            }}}
 " Plugin: EasyMotion, Sneak {{{
