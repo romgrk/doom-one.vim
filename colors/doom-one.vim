@@ -477,11 +477,15 @@ call s:_('DbgBreakPt',           '',        '#4F0037', '')
 "                                                                            }}}
 " CoC                                                                        {{{
 
+let s:fg_hint = color#Darken(s:teal, 0.1)
 let s:fg_inlay_hint = s:base5
 let s:sp_hint = s:teal
 
-call s:_('CocHintSign',         s:fg_inlay_hint)
-call hi#('CocRustChainingHint', s:fg_inlay_hint)
+call s:_('CocHintSign',         s:fg_hint)
+call s:_('CocHintFloat',        s:fg_hint)
+call s:_('CocHintVirtualText',  s:fg_inlay_hint)
+call s:_('CocRustTypeHint',     s:fg_inlay_hint)
+call s:_('CocRustChainingHint', s:fg_inlay_hint)
 
 call s:_('CocHintHighlight',    '', '', 'undercurl', s:sp_hint)
 call s:_('CocUnusedHighlight',  '', '', 'undercurl', s:sp_hint)
