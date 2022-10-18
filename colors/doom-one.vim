@@ -195,7 +195,7 @@ let s:bg_current = s:bg
 let s:bg_visible = s:bg
 let s:bg_other   = s:base1
 
-call s:_('TabLine',             s:base7, s:bg_alt,  'bold')
+call s:_('TabLine',             s:base9, s:bg_alt,     '')
 call s:_('TabLineSel',          s:blue,  s:bg_current, 'bold')
 call s:_('TabLineFill',         'none',  s:bg_other,   'bold')
 
@@ -248,10 +248,10 @@ endif
 " Search, Highlight, Conceal, Messages                                       {{{
 
 " let s:bg_search = color#Mix(s:bg, s:yellow, 0.2)
-let s:bg_search         = s:yellow
+let s:bg_search         = color#Mix(s:yellow, s:bg, 0.8)
 let s:bg_search_current = s:orange
 
-call s:_('Search',          s:hightlight_fg, s:bg_search,         'none')
+call s:_('Search',          '', s:bg_search,         'none')
 call s:_('IncSearch',       s:hightlight_fg, s:bg_search_current, 'none')
 call s:_('IncSearchCursor', s:hightlight_fg, s:white,             'none')
 
@@ -484,12 +484,19 @@ let s:sp_hint = s:teal
 call s:_('CocHintSign',         s:fg_hint)
 call s:_('CocHintFloat',        s:fg_hint)
 call s:_('CocHintVirtualText',  s:fg_inlay_hint)
-call s:_('CocRustTypeHint',     s:fg_inlay_hint)
-call s:_('CocRustChainingHint', s:fg_inlay_hint)
+
+hi! link CocInlayHint        CocHintVirtualText
+hi! link CocRustTypeHint     CocHintVirtualText
+hi! link CocRustChainingHint CocHintVirtualText
 
 call s:_('CocHintHighlight',    '', '', 'undercurl', s:sp_hint)
 call s:_('CocUnusedHighlight',  '', '', 'undercurl', s:sp_hint)
 
+call s:_('CocFloating',         s:base5, s:bg_popup)
+
+hi! link CocPumMenu     Pmenu
+hi! link CocPumDetail   Comment
+hi! link CocPumShortcut Pmenu
 
 "                                                                            }}}
 " Plugin: EasyMotion, Sneak {{{
@@ -519,7 +526,10 @@ hi! link IndentBlanklineSpaceCharBlankline IndentGuide
 " }}}
 " Plugin: Illuminate {{{
 
-call s:_('illuminatedWord', '', color#Lighten(s:bg_highlight, 0.2))
+call s:_('IlluminateWord', '', color#Lighten(s:bg_highlight, 0.2), 'none')
+hi! link IlluminatedWordRead IlluminateWord
+hi! link IlluminatedWordText IlluminateWord
+hi! link IlluminatedWordWrite IlluminateWord
 
 " }}}
 " Plugin: Sidebar {{{
