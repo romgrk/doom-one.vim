@@ -345,7 +345,7 @@ call s:_('Label',                s:blue, '',        '')
 call s:_('Operator',             s:blue, '',        '')
 
 call s:_('Constant',             s:violet, '',        'bold')
-call s:_('ConstantBuiltin',      s:magenta, '',       'bold')
+call s:_('ConstBuiltin',         s:magenta, '',       'bold')
 
 call s:_('Conditional',          s:blue, '',        '')
 
@@ -492,8 +492,9 @@ hi! link CocRustChainingHint CocHintVirtualText
 call s:_('CocHintHighlight',    '', '', 'undercurl', s:sp_hint)
 call s:_('CocUnusedHighlight',  '', '', 'undercurl', s:sp_hint)
 
-call s:_('CocFloating',         s:base5, s:bg_popup)
+" call s:_('CocFloating',         s:base5, s:bg_popup)
 
+hi! link CocFloating       Pmenu
 hi! link CocPumMenu        Pmenu
 hi! link CocPumDetail      Normal
 hi! link CocPumVirtualText Normal
