@@ -494,9 +494,10 @@ call s:_('CocUnusedHighlight',  '', '', 'undercurl', s:sp_hint)
 
 call s:_('CocFloating',         s:base5, s:bg_popup)
 
-hi! link CocPumMenu     Pmenu
-hi! link CocPumDetail   Comment
-hi! link CocPumShortcut Pmenu
+hi! link CocPumMenu        Pmenu
+hi! link CocPumDetail      Normal
+hi! link CocPumVirtualText Normal
+hi! link CocPumShortcut    Pmenu
 
 "                                                                            }}}
 " Plugin: EasyMotion, Sneak {{{
@@ -560,142 +561,64 @@ hi! link SearchBoxSpecial TextSpecial
 
 hi! link helpURL           URL
 
-" PHP                                                                       {{{2
-
-hi! link phpFunctions Function
-hi! link phpSuperglobal Identifier
-hi! link phpQuoteSingle StringDelimiter
-hi! link phpQuoteDouble StringDelimiter
-hi! link phpBoolean Constant
-hi! link phpNull Constant
-hi! link phpArrayPair Operator
-hi! link phpOperator Normal
-hi! link phpRelation Normal
-hi! link phpVarSelector Identifier
-
-" Python                                                                    {{{2
-
-hi! link pythonOperator Operator
-
-" Ruby                                                                      {{{2
-
-hi! link rubyRegexpDelimiter       RegexpDelimiter
-hi! link rubyRegexp                Regexp
-hi! link rubyRegexpSpecial         RegexpSpecial
-hi! link rubyPredefinedIdentifier  PredefinedIdentifier
-
-hi! link rubyClass              Class
-hi! link rubyIdentifier         Identifier
-hi! link rubyInstanceVariable   InstanceVariable
-hi! link rubySymbol             Symbol
-hi! link rubyControl            Control
-
-hi! link rubySharpBang Comment
-hi! link rubyConstant  Type
-hi! link rubyFunction  Function
-
-hi! link rubyGlobalVariable rubyInstanceVariable
-hi! link rubyModule         rubyClass
-
-hi! link rubyString                 String
-hi! link rubyStringDelimiter        StringDelimiter
-hi! link rubyInterpolationDelimiter Identifier
-
-
-" Erlang                                                                    {{{2
-
-hi! link erlangAtom rubySymbol
-hi! link erlangBIF rubyPredefinedIdentifier
-hi! link erlangFunction rubyPredefinedIdentifier
-hi! link erlangDirective Statement
-hi! link erlangNode Identifier
-
-" CoffeeScript                                                              {{{2
-
-hi! link coffeeRegExp rubyRegexp
-
-" Lua & Moonscript'                                                         {{{2
-
-hi! link luaOperator Conditional
-
-hi! link moonObject     Type
-hi! link moonSpecialOp  StringDelimiter
-hi! link moonSpecialVar Identifier
-hi! link moonObjAssign  StorageClass
-hi! link moonObjAssign  StorageClass
-hi! link moonConstant   Global
-
-" Objective-C/Cocoa                                                         {{{2
-
-hi! link objcClass Type
-hi! link cocoaClass objcClass
-hi! link objcSubclass objcClass
-hi! link objcSuperclass objcClass
-hi! link objcDirective rubyClass
-hi! link cocoaFunction Function
-hi! link objcMethodName Identifier
-hi! link objcMethodArg Normal
-hi! link objcMessageName Identifier
-
-" 1}}}
-
-" 1}}}
-
 " Neovim Treesitter                                                         {{{2
 
-hi! link TSAnnotation PreProc
-hi! link TSAttribute Macro
-hi! link TSBoolean Boolean
-hi! link TSCharacter Character
-hi! link TSConditional Conditional
-hi! link TSConstant Constant
-hi! link TSConstBuiltin ConstantBuiltin
-hi! link TSConstMacro Macro
-hi! link TSConstructor Method
-hi! link TSEmphasis Emphasis
-hi! link TSError Error
-hi! link TSException Error
-hi! link TSField NormalText
-hi! link TSFloat Float
-hi! link TSFunction Function
-hi! link TSFuncBuiltin FunctionBuiltin
-hi! link TSFuncMacro Function
-hi! link TSInclude Include
-hi! link TSKeyword Keyword
-hi! link TSKeywordFunction Keyword
-hi! link TSKeywordOperator Operator
-hi! link TSLabel Label
-hi! link TSLiteral Constant
-hi! link TSMethod Method
-hi! link TSNamespace Directory
-hi! link TSNumber Number
-hi! link TSOperator Operator
-hi! link TSParameter Argument
-hi! link TSParameterReference Argument
-hi! link TSProperty Property
-hi! link TSPunctBracket Delimiter
-hi! link TSPunctDelimiter Delimiter
-hi! link TSPunctSpecial DelimiterAlt
-hi! link TSRepeat Repeat
-hi! link TSString String
-hi! link TSStringEscape StringDelimiter
-hi! link TSStringRegex Regexp
-hi! link TSStrong Bold
-hi! link TSStructure Structure
-hi! link TSTag Keyword
-hi! link TSTagDelimiter Delimiter
-hi! link TSText String
-hi! link TSTitle Title
-hi! link TSType Type
-hi! link TSTypeBuiltin TypeBuiltin
-hi! link TSUnderline Underlined
-hi! link TSURI URL
-hi! link TSVariable NormalText
-hi! link TSVariableBuiltin VariableBuiltin
+hi! link @annotation            PreProc
+hi! link @attribute             Macro
+hi! link @boolean               Boolean
+hi! link @character             Character
+hi! link @conditional           Conditional
+hi! link @constant              Constant
+hi! link @constant.builtin      ConstBuiltin
+hi! link @constant.macro        Macro
+hi! link @constant.ructor       Method
+hi! link @emphasis              Emphasis
+hi! link @error                 Error
+hi! link @exception             Error
+hi! link @field                 NormalText
+hi! link @float                 Float
+hi! link @function              Function
+hi! link @function.builtin      FunctionBuiltin
+hi! link @function.macro        Function
+hi! link @include               Include
+hi! link @keyword               Keyword
+hi! link @keyword.function      Keyword
+hi! link @keyword.operator      Operator
+hi! link @label                 Label
+hi! link @literal               Constant
+hi! link @method                Method
+hi! link @namespace             Directory
+hi! link @number                Number
+hi! link @operator              Operator
+hi! link @parameter             Argument
+hi! link @parameter.reference   Argument
+hi! link @property              Property
+hi! link @punctuation.bracket   Delimiter
+hi! link @punctuation.delimiter Delimiter
+hi! link @punctuation.special   DelimiterAlt
+hi! link @repeat                Repeat
+hi! link @string                String
+hi! link @string.escape         StringDelimiter
+hi! link @string.regex          Regexp
+hi! link @strong                Bold
+hi! link @structure             Structure
+hi! link @tag                   Keyword
+hi! link @tag.delimiter         Delimiter
+hi! link @text                  String
+hi! link @title                 Title
+hi! link @type                  Type
+hi! link @type.builtin          TypeBuiltin
+hi! link @underline             Underlined
+hi! link @uri                   URL
+hi! link @variable              NormalText
+hi! link @variable.builtin      VariableBuiltin
 
-" Some grammars use TSField too liberally. Fix here.
-hi! link TSField Property
-hi! link pythonTSField NormalText
+" Typescript
+hi! link @tag.attribute  Property
+
+" Some grammars use @field too liberally. Fix here.
+hi! link @field        Property
+hi! link @field.python NormalText
 
 
 " 1}}}
