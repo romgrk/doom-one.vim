@@ -541,6 +541,7 @@ hi! link IlluminatedWordWrite IlluminateWord
 call s:_('SidebarNvimNormal',           s:fg,           s:bg_alt, 'none')
 call s:_('SidebarNvimSectionSeparator', s:fg_separator, s:bg_alt)
 call s:_('SidebarNvimSectionTitle',     s:yellow, s:bg_alt, 'bold')
+call s:_('SidebarNvimEndOfBuffer',      s:bg_alt,       s:bg_alt, 'none')
 
 hi! link SidebarNvimLabelCount Comment
 
