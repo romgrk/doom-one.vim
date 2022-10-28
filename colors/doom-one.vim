@@ -496,9 +496,11 @@ call s:_('CocUnusedHighlight',  '', '', 'undercurl', s:sp_hint)
 
 hi! link CocFloating       Pmenu
 hi! link CocPumMenu        Pmenu
+hi! link CocMenuSel        PmenuSel
 hi! link CocPumDetail      Normal
 hi! link CocPumVirtualText Normal
 hi! link CocPumShortcut    Pmenu
+hi! link CocPumSearch      TextInfoBold
 
 "                                                                            }}}
 " Plugin: EasyMotion, Sneak {{{
