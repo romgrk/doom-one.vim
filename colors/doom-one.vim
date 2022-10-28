@@ -94,6 +94,7 @@ let s:bg_highlighted = '#4A4A45'
 
 let s:fg           = '#bbc2cf'
 let s:fg_alt       = '#5B6268'
+let s:fg_popup     = '#D1D6DF'
 let s:fg_widget    = s:fg
 let s:fg_conceal   = s:base4
 let s:fg_subtle    = s:base7
@@ -170,7 +171,7 @@ call s:_('StatusLinePartNC', s:base6,  s:bg_statusline, 'bold')
 call s:_('Separator', s:fg_alt, 'none')
 call s:_('VertSplit', s:fg_separator,   s:bg, 'none')
 
-call s:_('Pmenu',        s:fg,              s:bg_popup)
+call s:_('Pmenu',        s:fg_popup,      s:bg_popup)
 call s:_('PmenuSel',     s:hightlight_fg, s:highlight)
 call s:_('PmenuSelBold', s:hightlight_fg, s:highlight, 'bold')
 call s:_('PmenuSbar',    '',                s:bg_alt)
@@ -500,7 +501,7 @@ hi! link CocMenuSel        PmenuSel
 hi! link CocPumDetail      Normal
 hi! link CocPumVirtualText Normal
 hi! link CocPumShortcut    Pmenu
-hi! link CocPumSearch      TextInfoBold
+call s:_('CocPumSearch', color#Lighten(s:magenta, 0.2), '', 'bold')
 
 "                                                                            }}}
 " Plugin: EasyMotion, Sneak {{{
