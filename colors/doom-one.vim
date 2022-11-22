@@ -568,6 +568,8 @@ hi! link helpURL           URL
 
 " Neovim Treesitter                                                         {{{2
 
+if has('nvim')
+
 hi! link @annotation            PreProc
 hi! link @attribute             Macro
 hi! link @boolean               Boolean
@@ -625,5 +627,6 @@ hi! link @tag.attribute  Property
 hi! link @field        Property
 hi! link @field.python NormalText
 
+end
 
 " 1}}}
