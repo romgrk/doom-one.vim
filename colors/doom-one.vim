@@ -568,7 +568,7 @@ hi! link helpURL           URL
 
 " Neovim Treesitter                                                         {{{2
 
-if has('nvim')
+if has('nvim-0.8')
 
 hi! link @annotation            PreProc
 hi! link @attribute             Macro
