@@ -620,6 +620,8 @@ hi! link @uri                   URL
 hi! link @variable              NormalText
 hi! link @variable.builtin      VariableBuiltin
 
+hi! link @text.literal.markdown String
+
 " Typescript
 hi! link @tag.attribute  Property
 
