@@ -568,7 +568,7 @@ hi! link helpURL           URL
 
 " Neovim Treesitter                                                         {{{2
 
-if has('nvim')
+if has('nvim-0.8')
 
 hi! link @annotation            PreProc
 hi! link @attribute             Macro
@@ -620,7 +620,7 @@ hi! link @uri                   URL
 hi! link @variable              NormalText
 hi! link @variable.builtin      VariableBuiltin
 
-hi! link @text.literal.markdown String
+hi! link @text.literal String
 
 " Typescript
 hi! link @tag.attribute  Property
