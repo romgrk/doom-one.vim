@@ -433,15 +433,15 @@ call s:_('DiffRemovedGutterLineNr',  s:fg_linenr, 'none', 'none')
 
 " Gitgutter
 
-hi! link GitTextAdd                DiffAddedText
-hi! link GitTextChange             DiffModifiedText
-hi! link GitTextChangeDelete       DiffModifiedText
-hi! link GitTextDelete             DiffRemovedText
+hi! link GitGutterAdd                DiffAddedText
+hi! link GitGutterChange             DiffModifiedText
+hi! link GitGutterChangeDelete       DiffModifiedText
+hi! link GitGutterDelete             DiffRemovedText
 
-hi! link GitTextAddLineNr          DiffAddedTextLineNr
-hi! link GitTextChangeLineNr       DiffModifiedTextLineNr
-hi! link GitTextChangeDeleteLineNr DiffModifiedTextLineNr
-hi! link GitTextDeleteLineNr       DiffRemovedTextLineNr
+hi! link GitGutterAddLineNr          DiffAddedTextLineNr
+hi! link GitGutterChangeLineNr       DiffModifiedTextLineNr
+hi! link GitGutterChangeDeleteLineNr DiffModifiedTextLineNr
+hi! link GitGutterDeleteLineNr       DiffRemovedTextLineNr
 
 
 "                                                                            }}}
