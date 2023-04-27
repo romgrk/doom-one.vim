@@ -53,7 +53,7 @@ endfunc
 " }}}
 " Colors                                                                     {{{
 
-let s:base0      = '#1B2229'
+let s:base0      = '#1b2229'
 let s:base1      = '#1c1f24'
 let s:base2      = '#202328'
 let s:base3      = '#23272e'
@@ -62,7 +62,7 @@ let s:base5      = '#5B6268'
 let s:base6      = '#73797e'
 let s:base7      = '#9ca0a4'
 let s:base8      = '#b1b1b1'
-let s:base9      = '#E6E6E6'
+let s:base9      = '#e6e6e6'
 
 let s:grey       = s:base4
 let s:red        = '#ff6c6b'
@@ -180,6 +180,9 @@ call s:h('PmenuThumb',   '#666660',         '#666660')
 
 hi! link NormalFloat Pmenu
 call s:h('FloatBorder', s:fg_alt, s:bg)
+
+call s:h('WinBar',          s:fg, s:bg, 'none', s:base4)
+call s:h('WinBarSeparator', s:base6, s:bg, 'none', s:base4)
 
 if exists('&pumblend')
   set pumblend=20
