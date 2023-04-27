@@ -181,8 +181,10 @@ call s:h('PmenuThumb',   '#666660',         '#666660')
 hi! link NormalFloat Pmenu
 call s:h('FloatBorder', s:fg_alt, s:bg)
 
-call s:h('WinBar',          s:fg, s:bg, 'none', s:base4)
-call s:h('WinBarSeparator', s:base6, s:bg, 'none', s:base4)
+call s:h('WinBar',          s:fg,     s:bg, 'none', s:base4)
+call s:h('WinBarSeparator', s:base6,  s:bg, 'none', s:base4)
+call s:h('WinBarModified',  s:yellow, s:bg, 'none', s:base4)
+
 
 if exists('&pumblend')
   set pumblend=20
