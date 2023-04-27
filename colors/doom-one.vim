@@ -134,6 +134,7 @@ call s:_('NormalPopover',     s:fg_highlight, s:bg_popup)
 call s:_('NormalPopupPrompt', s:base7,        color#Darken(s:bg_popup, 0.3), 'bold')
 call s:_('NormalPopupSubtle', s:base6,        s:bg_popup)
 call s:_('NormalText',        s:fg,           'none')
+hi! link NormalNC Normal
 
 call s:_('Cursor',           '', s:base0,  'reverse')
 call s:_('SecondaryCursor',  '', s:highlight, 'none')
@@ -221,6 +222,7 @@ call s:_('BufferInactiveTarget', s:red,            s:bg_other,    'bold')
 call s:_('BufferTabpages',       s:blue,           s:bg_statusline, 'bold')
 call s:_('BufferTabpageFill',    s:base4,          s:bg_other,    'bold')
 call s:_('BufferOffset',         s:base6,          s:bg,          'bold')
+call s:_('BufferScrollArrow',    s:base8,          s:bg_other,       'bold')
 
 call s:_('BufferPart',        s:diff_info_fg,   s:diff_info_bg0, 'bold')
 
