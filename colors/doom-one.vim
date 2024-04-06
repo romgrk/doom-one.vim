@@ -170,6 +170,7 @@ call s:h('StatusLinePart',   s:base6,  s:bg_statusline, 'bold')
 call s:h('StatusLinePartNC', s:base6,  s:bg_statusline, 'bold')
 
 call s:h('Separator', s:fg_alt, 'none')
+call s:h('WinSeparator', s:fg_separator,   s:bg, 'none')
 call s:h('VertSplit', s:fg_separator,   s:bg, 'none')
 
 call s:h('Pmenu',        s:fg_popup,      s:bg_popup)
