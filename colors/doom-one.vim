@@ -258,9 +258,10 @@ endif
 
 " let s:bg_search = color#Mix(s:bg, s:yellow, 0.2)
 let s:bg_search         = color#Mix(s:yellow, s:bg, 0.8)
-let s:bg_search_current = s:orange
+let s:bg_search_current = color#Mix(s:yellow, s:bg, 0.8)
 
 call s:h('Search',          '', s:bg_search,         'none')
+call s:h('CurSearch',       '', s:bg_search_current, 'none')
 call s:h('IncSearch',       s:hightlight_fg, s:bg_search_current, 'none')
 call s:h('IncSearchCursor', s:hightlight_fg, s:white,             'none')
 
